@@ -32,10 +32,8 @@ void loop(void) {
   success = nfc.readPassiveTargetID(PN532_MIFARE_ISO14443A, uid, &uidLength);
 
   if (success) {
-    Serial.println("Found an NFC card!");
-
-    Serial.print("UID Length: ");Serial.print(uidLength, DEC);Serial.println(" bytes");
-    Serial.print("UID Value: ");
+    
+    Serial.print(" ");
     for (uint8_t i=0; i < uidLength; i++) {
       Serial.print(" 0x");Serial.print(uid[i], HEX);
     }
